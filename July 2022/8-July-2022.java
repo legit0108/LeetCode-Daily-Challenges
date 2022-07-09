@@ -43,7 +43,7 @@ class Solution {
     }
 }
 
-// Method-2 : bottom-up
+// Method-2 : bottom up
 // TC : O(m * target * n * n)
 // SC : O(m * target * n)
 
