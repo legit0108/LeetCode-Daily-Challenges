@@ -45,7 +45,7 @@ class Solution {
         if(level==view.size()) view.add(node.val);
         else view.set(level,node.val);
         
-        dfs(node.right,view,level+1);
         dfs(node.left,view,level+1);
+        dfs(node.right,view,level+1);
     }
 }
