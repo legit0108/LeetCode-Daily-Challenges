@@ -1,5 +1,5 @@
 // TC : O(len*log(len))
-// SC : O(len)
+// SC : O(1)
 
 class Solution {
     public int numberOfWeakCharacters(int[][] properties) {
