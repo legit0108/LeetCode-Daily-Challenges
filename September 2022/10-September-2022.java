@@ -47,6 +47,7 @@ class Solution {
                 if(transaction==0) dp[day] = 0;
                 else{
                     int prevProfit = dp[day];
+                    
                     dp[day] = dp[day-1];
                     dp[day] = Math.max(dp[day], maxProfit+prices[day]);
 
