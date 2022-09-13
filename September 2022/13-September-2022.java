@@ -26,6 +26,6 @@ class Solution {
         }
         
         if(remainingBytes == 0) return true;
-        return false;
+        else return false;
     }
 }
