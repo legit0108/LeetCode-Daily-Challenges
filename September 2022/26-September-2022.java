@@ -1,9 +1,8 @@
-// TC : O(len * alpha), alpha being constant can be ignored
+// TC : O(equations.length * alpha), alpha being constant can be ignored
 // SC : O(26) / O(1)
 
 class Solution {
     public boolean equationsPossible(String[] equations) {
-        int len = equations.length;
         int parent[] = new int[26];
         int rank[] = new int[26];
         
@@ -32,10 +31,10 @@ class Solution {
     }
     
     private void union(int var1, int var2, int parent[], int rank[]){
-        if(parent[var1] == parent[var2]) return;
-        
         int par_var1 = find(var1, parent);
         int par_var2 = find(var2, parent);
+        
+        if(par_var1 == par_var2) return;
         
         if(rank[par_var1] > rank[par_var2]){
             parent[par_var2] = par_var1;
