@@ -1,4 +1,4 @@
-// Solution-1: Using pair
+// Solution-1: Using Stack<Pair>
 
 // TC: O(len)
 // SC: O(len)
