@@ -22,7 +22,46 @@ class Solution {
     }
 }
 
-// Solution - 2 : Lagrange's four square theorem
+// Solution - 2 : BFS
+
+// TC : O(n*sqrt(n))
+// SC : O(n)
+
+class Solution {
+    public int numSquares(int n) {
+        Queue<Integer> queue = new ArrayDeque();
+        Set<Integer> visited = new HashSet();
+        queue.add(0);
+        
+        int leastPerfectSquares = 0;
+        
+        while(queue.size()>0){
+           int size = queue.size();
+           
+           while(size>0){
+               int num = queue.remove();
+               size--;
+               
+               if(visited.contains(num)) continue;
+               if(num==n) return leastPerfectSquares;
+               
+               visited.add(num);
+               
+               for(int perfectSquare = 1; num+perfectSquare*perfectSquare<=n; perfectSquare++){
+                   int nextNum = num+perfectSquare*perfectSquare;
+                   
+                   if(!visited.contains(nextNum)) queue.add(nextNum);
+               }
+           } 
+            
+           leastPerfectSquares++; 
+        }
+        
+        return -1; // never hit
+    }
+}
+
+// Solution - 3 : Lagrange's four square theorem
 
 // TC : O(sqrt(n))
 // SC : O(1)
