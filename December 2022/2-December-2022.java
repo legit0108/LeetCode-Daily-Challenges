@@ -3,7 +3,7 @@
 // Solution-1
 
 // TC: O(len)
-// SC: O(1), all maps have constant size
+// SC: O(1), all maps have fixed size
 
 class Solution {
     public boolean closeStrings(String word1, String word2) {
