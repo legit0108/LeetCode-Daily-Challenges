@@ -1,9 +1,9 @@
 // To be close strings, both strings should have same set of characters and their frequencies should be anagrams of each other 
 
-// TC: O(len)
-// SC: O(1), note that map1, map2 and map all have a size of atmost 26
+// Solution-1
 
-// Another solution : count frequencies of word1, word2 using arrays of size 26, then sort the arrays to check for close strings, similar time and space 
+// TC: O(len)
+// SC: O(1), all maps have constant size
 
 class Solution {
     public boolean closeStrings(String word1, String word2) {
@@ -44,5 +44,50 @@ class Solution {
         }
         
         return map.size()==0;
+    }
+}
+
+// Solution-2
+
+// TC: O(len)
+// SC: O(1)
+
+class Solution {
+    public boolean closeStrings(String word1, String word2) {
+        int len1 = word1.length();
+        int len2 = word2.length();
+        
+        if(len1!=len2) return false;
+        
+        int len = len1;
+        int size = 26;
+        
+        int map1[] = new int[size];
+        int map2[] = new int[size];
+        
+        for(int idx=0; idx<len; idx++){
+            char ch1 = word1.charAt(idx);
+            char ch2 = word2.charAt(idx);
+            
+            map1[ch1-'a']++;
+            map2[ch2-'a']++;
+        }
+        
+        for(int idx=0; idx<size; idx++){
+            int freq1 = map1[idx];
+            int freq2 = map2[idx];
+            
+            if(freq1==0 && freq2==0) continue;
+            if(freq1==0 || freq2==0) return false;
+        }
+        
+        Arrays.sort(map1);
+        Arrays.sort(map2);
+        
+        for(int idx=0; idx<size; idx++){
+            if(map1[idx]!=map2[idx]) return false;
+        }
+        
+        return true;
     }
 }
