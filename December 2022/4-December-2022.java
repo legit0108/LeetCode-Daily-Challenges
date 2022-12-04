@@ -1,3 +1,8 @@
+// Calculate sum of entire array to segregate prefix and suffix to solve the problem in linear time
+
+// TC : O(len)
+// SC : O(1)
+
 class Solution {
     public int minimumAverageDifference(int[] nums) {
         int len = nums.length;
