@@ -1,4 +1,4 @@
-// Solution - 1 : DP, dp[idx] = max money possible you can rob till idx
+// Solution - 1 : DP, dp[idx] = max money possible to rob till idx
 
 // TC : O(len)
 // SC : O(len)
