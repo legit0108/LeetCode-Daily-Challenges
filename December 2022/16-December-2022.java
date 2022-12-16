@@ -139,7 +139,7 @@ class MyQueue {
        output = new Stack();
     }
     
-    public void push(int x) { // O(1) amortized 
+    public void push(int x) { // O(1)
        input.push(x);
     }
     
