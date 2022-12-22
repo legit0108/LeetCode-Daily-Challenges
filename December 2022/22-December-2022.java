@@ -1,4 +1,4 @@
-// Solution - 1: 2 DFS
+// Solution-1: 2 DFS
 // answer(node) = answer(parent) - size(node) + (totalNodes-size(node)-2);  
 
 // TC: O(nodes)
@@ -53,8 +53,8 @@ class Solution {
     }
 }
 
-// Solution - 2: 1 DFS
-// answer(node) = sum(answer(children) + subtree size(children)) 
+// Solution-2: 1 DFS
+// answer(node) = sum(answer(children) + size(children)) 
 
 // TC: O(nodes)
 // SC: O(nodes)
