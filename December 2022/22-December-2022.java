@@ -1,5 +1,5 @@
 // Solution-1: 2 DFS
-// answer(node) = answer(parent) - size(node) + (totalNodes-size(node)-2);  
+// answer(node) = answer(parent) - size(node) + (totalNodes-size(node)-2)  
 
 // TC: O(nodes)
 // SC: O(nodes)
