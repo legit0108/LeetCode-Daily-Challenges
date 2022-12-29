@@ -12,7 +12,7 @@ class Solution {
         CPU = new PriorityQueue<int[]>((job1, job2)->((job1[1]==job2[1])?
                                        Integer.compare(job1[0], job2[0]):
                                        Integer.compare(job1[1], job2[1]))); // {index, processing time}
-                                                                            // note that it is always better to use Integer.compare() rather than subtraction to avoid overflow
+                                                       // note that it is always better to use Integer.compare() rather than subtraction to avoid overflow
         
         for(int index=0; index<len; index++){
             int[] task = tasks[index];
