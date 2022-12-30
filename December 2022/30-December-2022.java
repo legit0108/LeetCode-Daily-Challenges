@@ -83,10 +83,10 @@ class Solution {
 
 class Solution {
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-        return bfs(graph);
+        return iterativeDfs(graph);
     }
     
-    private List<List<Integer>> bfs(int[][] graph){
+    private List<List<Integer>> iterativeDfs(int[][] graph){
         int nodes = graph.length;
         int[] indegree = new int[nodes];
         
