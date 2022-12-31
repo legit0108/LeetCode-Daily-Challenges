@@ -1,3 +1,8 @@
+// Backtracking
+
+// TC: O(3^(rows*cols))
+// SC: O(rows*cols)
+
 class Solution {
     public int uniquePathsIII(int[][] grid) {
         int rows = grid.length;
