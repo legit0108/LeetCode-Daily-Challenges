@@ -38,15 +38,15 @@ class Solution {
 
 class Solution {
     public int minDeletionSize(String[] strs) {
-        int len = strs.length;
-        int strLen = strs[0].length();
+        int rows = strs.length;
+        int cols = strs[0].length();
         int minDels = 0;
         
-        for(int strIdx=0; strIdx<strLen; strIdx++){
+        for(int col=0; col<cols; col++){
             char prevCh = 'a';
             
-            for(int idx=0; idx<len; idx++){
-                char currCh = strs[idx].charAt(strIdx);
+            for(int row=0; row<rows; row++){
+                char currCh = strs[row].charAt(col);
                 
                 if(currCh<prevCh){
                     minDels++;
