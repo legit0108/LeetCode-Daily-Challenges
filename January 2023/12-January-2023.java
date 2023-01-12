@@ -42,6 +42,7 @@ class Solution {
     }
 }
 
+
 // Solution-2: BFS, Kahn's algorithm-like 
 
 // TC: O(nodes)
@@ -110,5 +111,48 @@ class Solution {
         char label = labels.charAt(node);
         map[node][label-'a']++;
         ans[node] = map[node][label-'a'];
+    }
+}
+
+
+// Solution-3: Strict O(nodes), no factor of 26
+
+// TC: O(nodes)
+// SC: O(nodes)
+
+class Solution {
+    public int[] countSubTrees(int n, int[][] edges, String labels) {
+        ArrayList<Integer>[] tree = new ArrayList[n];
+        for(int node=0; node<n; node++) tree[node] = new ArrayList();
+        
+        
+        for(int[] edge: edges){
+            int node1 = edge[0];
+            int node2 = edge[1];
+            
+            tree[node1].add(node2);
+            tree[node2].add(node1);
+        }
+        
+        int[] ans = new int[n];
+        int[] count = new int[26];
+        dfs(0, -1, tree, labels, ans, count);
+        
+        return ans;
+    }
+    
+    private void dfs(int node, int parent, ArrayList<Integer>[] tree, String labels, int[] ans, int[] count){
+        char label = labels.charAt(node);
+        int sumSoFar = count[label-'a'];
+        count[label-'a']++;
+        
+        for(int child: tree[node]){
+            if(child!=parent){
+                dfs(child, node, tree, labels, ans, count);
+            }
+        }
+        
+        int totalSum = count[label-'a'];
+        ans[node] = totalSum - sumSoFar;
     }
 }
