@@ -1,3 +1,8 @@
+// Union-find
+
+// TC: O(s1.length() + baseStr.length())
+// SC: O(26) / O(1)
+
 class Solution {
     public String smallestEquivalentString(String s1, String s2, String baseStr) {
         int[] parent = new int[26];
