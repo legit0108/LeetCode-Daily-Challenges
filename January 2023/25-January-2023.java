@@ -1,7 +1,7 @@
 // Solution-1
 
 // TC: O(nodes)
-// SC: O(2*nodes)
+// SC: O(nodes)
 
 // Find the distance from node1 to all nodes
 // then do the same for node2
