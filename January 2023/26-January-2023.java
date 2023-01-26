@@ -1,7 +1,7 @@
-// BFS, revisit a node if lesser cost found or lesser stops found
+// Solution-1: BFS, revisit a node if lesser cost found or lesser stops found
 
-// TC: O(n^2)
-// SC: O(n^2)
+// TC: O(n*n*k)
+// SC: O(n*n*k)
 
 class Solution {
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
@@ -91,5 +91,42 @@ class Solution {
             this.neighbour = neighbour;
             this.weight = weight;
         }
+    }
+}
+
+
+// Solution-2: Bellman Ford
+
+// TC: O(n*n*k)
+// SC: O(n)
+
+class Solution {
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+        Integer[] minDist = new Integer[n];
+        minDist[src] = 0;
+        
+        for(int itr=0; itr<=k; itr++){ // Bellman Ford iterates over n-1 edges for n nodes, for k stops we have k+2 nodes and thus k+1 edges
+            Integer[] nextMinDist = new Integer[n];
+            
+            for(int node=0; node<n; node++) nextMinDist[node] = minDist[node];
+            
+            for(int[] flight: flights){
+                int from = flight[0];
+                int to = flight[1];
+                int price = flight[2];
+                
+                if(minDist[from]!=null){
+                    if(nextMinDist[to]==null) nextMinDist[to] = minDist[from] + price;
+                    else nextMinDist[to] = Math.min(nextMinDist[to], minDist[from] + price);
+                }
+            }
+            
+            minDist = nextMinDist;
+        }
+        
+        Integer cheapestPrice = minDist[dst];
+        
+        if(cheapestPrice!=null) return cheapestPrice;
+        else return -1;
     }
 }
