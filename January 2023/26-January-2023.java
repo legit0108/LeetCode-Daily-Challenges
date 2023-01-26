@@ -1,3 +1,8 @@
+// BFS, revisit a node if lesser cost found or lesser stops found
+
+// TC: O(n^2)
+// SC: O(n^2)
+
 class Solution {
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         ArrayList<Pair>[] graph = new ArrayList[n];
