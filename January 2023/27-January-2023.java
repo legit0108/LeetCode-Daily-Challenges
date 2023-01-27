@@ -12,13 +12,13 @@ class Solution {
         List<String> list = new ArrayList();
         
         for(String word: words){
-            if(isPossible(word, word.length(), root)) list.add(word);
+            if(isConcatenatedWord(word, word.length(), root)) list.add(word);
         }
         
         return list;
     }
     
-    private boolean isPossible(String word, int len, TrieNode root){
+    private boolean isConcatenatedWord(String word, int len, TrieNode root){
         int[] dp = new int[len+1];
         
         for(int idx1=len-1; idx1>=0; idx1--){
