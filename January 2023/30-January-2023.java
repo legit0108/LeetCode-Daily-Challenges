@@ -1,4 +1,5 @@
 // DP
+// Recurrence: f(n) = f(n-1) + f(n-2) + f(n-3)
 
 // TC: O(n)
 // SC: O(1)
