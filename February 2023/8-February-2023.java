@@ -1,4 +1,4 @@
-// Solution-1: DP, Explore all possibilities
+// Solution-1: DP, explore all possibilities
 
 // TC: O(len^2)
 // SC: O(len)
@@ -24,7 +24,7 @@ class Solution {
 }
 
 
-// Solution-2: Greedy
+// Solution-2: Greedy, jump as far as possible to minimize jumps
 
 // TC: O(len)
 // SC: O(1)
