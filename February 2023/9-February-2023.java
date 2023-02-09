@@ -1,6 +1,6 @@
 // Solution-1
 
-// TC: O(ideas.length*(26*26*name.length()))
+// TC: O(ideas.length*(26*26+name.length()))
 // SC: O(ideas.length*name.length())
 
 class Solution {
