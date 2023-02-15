@@ -1,7 +1,7 @@
 // Simple Math
 
-// TC: O(max(len, logk))
-// SC: O(max(len, logk))
+// TC: O(max(len, log(k)))
+// SC: O(max(len, log(k)))
 
 class Solution {
     public List<Integer> addToArrayForm(int[] num, int k) {
