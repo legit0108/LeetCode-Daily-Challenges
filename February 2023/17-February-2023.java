@@ -14,13 +14,13 @@
  * }
  */
 
- 
+
 // Solution-1: Recursively using DFS
 
 // TC: O(nodes)
 // SC: O(nodes)
 
- class Solution {
+class Solution {
     private int minDiff = Integer.MAX_VALUE;
     private TreeNode prev;
     
