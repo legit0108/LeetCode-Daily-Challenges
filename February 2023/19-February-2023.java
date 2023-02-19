@@ -81,7 +81,7 @@ class Solution {
         TreeNode left = node.left;
         TreeNode right = node.right;
         
-        // Add will be O(1) is linked list is used
+        // Add will be O(1) if linked list is used
         List<Integer> list = result.get(level);
         if(level%2==0) list.add(val);
         else list.add(0, val);
