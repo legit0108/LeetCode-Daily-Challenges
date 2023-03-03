@@ -31,7 +31,60 @@ class Solution {
 }
 
 
-// Solution-2: Pattern-hashing
+// Solution-2: Space-optimized KMP
+
+// TC: O(needle.length() + haystack.length())
+// SC: O(needle.length())
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int haystackLen = haystack.length();
+        int needleLen = needle.length();
+        
+        if(needleLen>haystackLen) return -1;
+        
+        int[] lps = kmp(needle, needleLen);
+        
+        int haystackIdx = 0;
+        int needleIdx = 0;
+        
+        while(haystackIdx<haystackLen && needleIdx<needleLen){
+            if(haystack.charAt(haystackIdx) == needle.charAt(needleIdx)){
+                haystackIdx++;
+                needleIdx++;
+            }else{
+                if(needleIdx>0) needleIdx = lps[needleIdx-1];
+                else haystackIdx++;
+            }
+        }
+        
+        if(needleIdx!=needleLen) return -1;
+        
+        return haystackIdx-needleLen;
+    }
+    
+    private int[] kmp(String str, int size){
+        int[] lps = new int[size];
+        int idx = 1;
+        int len = 0;
+        
+        while(idx<size){
+            if(str.charAt(idx)==str.charAt(len)){
+                len++;
+                lps[idx] = len;
+                idx++;
+            }else{
+                if(len>0) len = lps[len-1];
+                else idx++;
+            }
+        }
+        
+        return lps;
+    }
+}
+
+
+// Solution-3: Pattern-hashing
 
 // TC: O(needle.length() + haystack.length())
 // SC: O(1)
