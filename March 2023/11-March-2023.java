@@ -29,7 +29,7 @@
 // Solution-1: Split into two parts from middle
 
 // TC: O(nlogn)
-// SC: O(log(n)) recursive
+// SC: O(logn) recursive
 
 // where n = size of linked list
 
@@ -71,7 +71,7 @@ class Solution {
 // Solution-2: Linear time
 
 // TC: O(n)
-// SC: O(log(n)) recursive
+// SC: O(logn) recursive
 
 // where n = size of linked list
 
