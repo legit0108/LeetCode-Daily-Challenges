@@ -3,7 +3,7 @@
   Idea: If a potion is valid for some spell, all potions greater than or equal to that potion are also valid potions  
 
   TC: O(totalPotions*log(totalPotions) + totalSpells*log(totalPotions))
-  SC: O(1) excluding output space
+  SC: O(1)
 */
 
 class Solution {
@@ -52,7 +52,7 @@ class Solution {
   -> If spells are processed in sorted order then all potions for previously iterated spells are also valid for the current spell
 
   TC: O(totalPotions*log(totalPotions) + totalSpells*log(totalSpells))
-  SC: O(1) excluding output space
+  SC: O(totalSpells)
 */
 
 class Solution {
@@ -93,8 +93,8 @@ class Solution {
   Solution-3: Prefix Sum
   Idea: If a potion is valid for some spell, it is valid for all spells greater than that spell
 
-  TC: O(totalPotions + totalSpells + maxSpell)
-  SC: O(maxSpell) excluding output space
+  TC: O(potions.length + spells.length + maxSpell)
+  SC: O(maxSpell)
 */
 
 class Solution {
