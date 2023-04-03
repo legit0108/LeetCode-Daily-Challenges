@@ -1,3 +1,12 @@
+/*
+ Follow ups:
+
+ If >2 people can sit in one boat:
+  -> There is no limit on size of the boat: LeetCode 1986
+  -> There is some fixed limit N such that N>2: Bin Packing problem (NP Hard)
+ */
+
+
 // Solution-0: For every person, pair that person up with some other person (if possible)
 // TC: O(n^2), n = people.length
 
@@ -37,7 +46,6 @@ class Solution {
 }
 
 
-
 // Solution-2: Optimize Solution-1 using count/bucket sort
 
 // TC: O(n + limit)
@@ -73,12 +81,3 @@ class Solution {
         return minBoats;
     }
 }
-
-
-/*
- Follow ups:
-
- If >2 people can sit in one boat:
-  -> There is no limit on size of the boat: LeetCode 1986
-  -> There is some fixed limit N such that N>2: Bin Packing problem (NP Hard)
- */
