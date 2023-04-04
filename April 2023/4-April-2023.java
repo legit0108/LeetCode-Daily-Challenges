@@ -28,9 +28,9 @@ class Solution {
 /* 
  Solution-2: Track the last index
  Idea: If the last index of occurence of a character is greater than or equal to the start of our current substring,
- then that means we are encountering said character second time after starting the current substring, so we perform a split here
+ then that means we are encountering said character for the second time after starting the current substring, so we perform a split here
 
- TC: O(s.length()
+ TC: O(s.length())
  SC: O(26)
 */
 
