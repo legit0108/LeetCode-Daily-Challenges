@@ -27,7 +27,7 @@ class Solution {
 
 /* 
  Solution-2: Track the last index
- Idea: If the last index of occurence of a character is greater than or equal to the start of our current substring,
+ Idea: If the last index of occurrence of a character is greater than or equal to the start of our current substring,
  then that means we are encountering said character for the second time after starting the current substring, so we perform a split here
 
  TC: O(s.length())
@@ -85,7 +85,7 @@ class Solution {
         return (mask&(1<<bit))!=0;
     }
     
-    private int setBit(int mask, int bit){ // sets bit int mask
+    private int setBit(int mask, int bit){ // sets bit in mask
         return mask|(1<<bit);
     }
 }
