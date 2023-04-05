@@ -95,6 +95,7 @@ class Solution {
 /* 
  Solution-2: Binary Search 2
 
+ -> Intuition: For any index i, we have complete control over elements in the prefix of i (can convert them to any other number)
  -> maxPossible in Solution-1 can be implemented as follows: prefixSum at every index should be less than or equal to max in consideration * length of array so far
  -> We can convert the entire prefix of nums to a state such that all numbers in nums are <= max in consideration
  if and only if the sum of our prefix is less than sum of prefix obtained by filling all the places of our prefix with max in consideration
@@ -129,7 +130,8 @@ class Solution {
     
     private boolean maxPossible(int[] nums, long max, int len){
         long prefixSum = 0;
-        long pivot= 0; // since prefixSum<=(index+1)*max for every index, we can store maximum value for ceil(prefixSum/index) and compare it with max
+        long pivot= 0; // since prefixSum<=(index+1)*max for every index, we can store maximum value for ceil(prefixSum/index) and compare it with max 
+                       // (the max acts like a critical/pivot point)
         
         for(int index=0; index<len; index++){
             prefixSum+=nums[index];
@@ -141,11 +143,15 @@ class Solution {
 }
 
 
-// Solution-3: Optimize Solution-2, remove Binary Search
-// We can directly return the maximum value of pivot obtained in Solution-2 instead of iterating using Binary Search 
-
-// TC: O(len)
-// SC: O(1)
+/* 
+ Solution-3: Optimize Solution-2, remove Binary Search
+ 
+ -> Intuition: It is optimal to convert a prefix of nums into the average of its elements to minimize the maximum 
+ -> We can directly return the maximum value of pivot obtained in Solution-2 instead of iterating using Binary Search 
+ 
+ TC: O(len)
+ SC: O(1)
+*/
 
 class Solution {
     public int minimizeArrayValue(int[] nums) {
