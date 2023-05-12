@@ -1,4 +1,4 @@
-// Solution-1: DP, Reursion + memoization
+// Solution-1: DP, Recursion + memoization
 
 // TC: O(len)
 // SC: O(len)
