@@ -1,4 +1,4 @@
-// TC: O(nodes^2)
+// TC: O(nodes*nodes)
 // SC: O(nodes)
 
 class Solution {
